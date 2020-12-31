@@ -19,17 +19,16 @@ const variants = {
 };
 
 
-export const MenuItem = ({ i }) => {
+export const MenuItem = ({ name, url, toggle }) => {
   return (
     <motion.li
       variants={variants}
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.95 }}
     >
-      <div className="text-placeholder text-gray-50">Work in progress</div>
-      {/* <Link href={href} >
-        <a>{page}</a>
-      </Link> */}
+      <Link href={url}>
+        <a className="text-gray-50 mb-5 text-2xl" onClick={toggle}>{name}</a>
+      </Link>
     </motion.li>
   );
 };

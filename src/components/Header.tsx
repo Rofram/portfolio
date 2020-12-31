@@ -6,8 +6,26 @@ import { motion, useCycle } from 'framer-motion';
 import { MenuToggle } from "../utils/MenuToggle";
 import { Navigation } from "../utils/Navigation";
 import { useDimensions } from "../utils/use-dimensions";
+import { MenuItem } from '../utils/MenuItem';
 
-
+const Pages = [
+  {
+    name: 'Home',
+    url: '/',
+  }, 
+  {
+    name: 'Projects',
+    url: '/projects',
+  }, 
+  {
+    name: 'Knowledge',
+    url: '/knowledge',
+  }, 
+  {
+    name: 'About-Me',
+    url: '/about',
+  }, 
+];
 
 const sidebar = {
   open: (height = 1000) => ({
@@ -51,7 +69,11 @@ const Header = () => {
         className="side-menu md:hidden"
       >
         <motion.div className="background" variants={sidebar} />
-        <Navigation />
+        <Navigation>
+          {Pages.map(i => (
+            <MenuItem name={i.name} url={i.url} key={i.name} toggle={() => setIsOpen()} />
+          ))}
+        </Navigation>
         <MenuToggle toggle={() => setIsOpen()} />
       </motion.nav>
 

@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import { MenuItem } from "./MenuItem";
 
 const variants = {
   open: {
@@ -10,12 +9,9 @@ const variants = {
   }
 };
 
-export const Navigation = () => (
+export const Navigation = ({ children }) => (
   <motion.ul variants={variants}>
-    {itemIds.map(i => (
-      <MenuItem i={i} key={i} />
-    ))}
+    {children}
   </motion.ul>
 );
 
-const itemIds = [0, 1, 2, 3, 4];
