@@ -69,6 +69,19 @@ export default function Home() {
           />
         </div>
       </section>
+      <section className="flex flex-col justify-center items-center">
+        <h1 className="text-3xl font-bold my-10">
+          Work in Progress
+        </h1>
+        <iframe 
+          src="https://giphy.com/embed/o0vwzuFwCGAFO" 
+          width="400" 
+          height="400" 
+          frameBorder="0" 
+          className="giphy-embed rounded-xl" 
+          allowFullScreen
+        />
+      </section>
     </main>
   )
 }
