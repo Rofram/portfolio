@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import Image from 'next/image';
+import Head from 'next/head';
 
 interface CardProps {
   href: string;
@@ -22,6 +23,9 @@ const Card: React.FC<CardProps> = ({ href, imgSrc, imgWidth=100, imgHeight=50 })
 export default function Home() {
   return (
     <main className="flex flex-1 flex-col justify-center my-12">
+      <Head>
+        <title>Inicio | Rofran Portfolio</title>
+      </Head>
       <section className="my-12">
         <h1 className="flex flex-col align-center text-center text-7xl md:text-9xl font-black tracking-tighter banner-home">
           <span>Developer.</span>

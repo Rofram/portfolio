@@ -10,10 +10,6 @@ import { MenuItem } from '../utils/MenuItem';
 
 const Pages = [
   {
-    name: 'Home',
-    url: '/',
-  }, 
-  {
     name: 'Projects',
     url: '/projects',
   }, 
@@ -53,13 +49,17 @@ const Header = () => {
   const { height } = useDimensions(containerRef);
 
   return (
-    <header className='flex justify-center md:justify-between py-4 md:py-4 items-center'>
-      <Image 
-        src='/img/Rofran-logo.svg'
-        alt='Rofran'
-        width={138}
-        height={60}
-      />
+    <header className='flex justify-center md:justify-between py-4 items-center'>
+      <Link href="/" >
+            <a>
+              <Image 
+                src='/img/Rofran-logo.svg'
+                alt='Rofran'
+                width={138}
+                height={60}
+              />
+            </a>
+          </Link> 
 
       <motion.nav
         initial={false}
@@ -78,15 +78,11 @@ const Header = () => {
       </motion.nav>
 
       <nav className="hidden md:block space-x-8 font-medium"> 
-        <Link href="/projects" >
-          <a className="tracking-wide hover:text-gray-300">Projects</a>
-        </Link>
-        <Link href="/knowledge" >
-          <a className="tracking-wide hover:text-gray-300">Knowledge</a>
-        </Link>
-        <Link href="/about" >
-          <a className="tracking-wide hover:text-gray-300">About-Me</a>
-        </Link>
+        {Pages.map(i => (
+          <Link href={i.url} key={i.name} >
+            <a className="tracking-wide hover:text-gray-300">{i.name}</a>
+          </Link>  
+        ))}
       </nav>
     </header>
   )

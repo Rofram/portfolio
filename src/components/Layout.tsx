@@ -1,3 +1,4 @@
+import Footer from './Footer';
 import Header from './Header';
 
 
@@ -6,6 +7,7 @@ const Layout = ({ children }) => {
     <div className="max-w-8xl mx-auto px-4 sm:px-6 md:px-8">
       <Header />
       {children}
+      <Footer />
     </div>
   )
 }
